@@ -52,9 +52,12 @@ dot.mouseleave(function(){
 function advance() {
   record++;
   $(".record").text(record + " / " + highRecord);
-  // if (record == highRecord + 1) {
-  //   recordAudio.play();
-  // }
+  if (record <= highRecord && $(".record").hasClass("record-highlighted")) {
+    $(".record").removeClass("record-highlighted");
+  }
+  if (record == highRecord + 1) {
+    $(".record").addClass("record-highlighted");
+  }
   var newHeight = scaleRatio * parseInt(dot.css("height"), 10);
   var newWidth = scaleRatio * parseInt(dot.css("width"), 10);
   dot.css("height", newHeight + "px");
