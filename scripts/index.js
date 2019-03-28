@@ -66,7 +66,8 @@ function advance() {
   var coords = newCoords();
   var oldCoords = [parseInt(dot.css("left"), 10),
     parseInt(dot.css("top"), 10)];
-  while (  distance(coords, oldCoords) < 200  ) {
+  var minShift = 0.3 * Math.min($(".bounding-box").height(), $(".bounding-box").width());
+  while (  distance(coords, oldCoords) < minShift  ) {
     coords = newCoords();
   }
   dot.css("left", coords[0] + "px");
@@ -128,8 +129,8 @@ function gameOver() {
 function newCoords() {
   var maxLeft = parseInt($(".bounding-box").css("width"), 10) - parseInt(dot.css("width"), 10);
   var maxTop = parseInt($(".bounding-box").css("height"), 10) - parseInt(dot.css("height"), 10);
-  var left = maxLeft*Math.random();
-  var top = maxTop*Math.random();
+  var left = maxLeft * Math.random();
+  var top = maxTop * Math.random();
   return [left, top];
 }
 
