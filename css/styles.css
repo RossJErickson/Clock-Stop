@@ -50,6 +50,7 @@ footer {
   background-color: rgb(80, 20, 80);
   border-radius: 100%;
   clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
   height: calc(100%);
   position: absolute;
   width: calc(100%);
